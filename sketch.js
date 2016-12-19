@@ -64,11 +64,140 @@ Classify the recorded signal using the following criterion:
 */
 
 
+//╦  ╦╦╔╦╗╔═╗╔═╗  ╔═╗╔╗╔╔╦╗  ╔═╗╔═╗╦═╗╦╔═╗╦ ╦╔═╗╦ ╦ ╦ ╦╔═╗
+//╚╗╔╝║ ║║║╣ ║ ║  ╠═╣║║║ ║║  ╚═╗║╣ ╠╦╝║║ ║║ ║╚═╗║ ╚╦╝ ║╚═╗
+// ╚╝ ╩═╩╝╚═╝╚═╝  ╩ ╩╝╚╝═╩╝  ╚═╝╚═╝╩╚═╩╚═╝╚═╝╚═╝╩═╝╩o╚╝╚═╝
 
 
 
 
 
+
+var video;
+var canvas;
+var mic;
+var micLevel;
+var chroma;
+//var mytext;
+
+
+
+
+function setup() {
+    
+  mic = new p5.AudioIn();
+  mic.start();    
+
+  canvas = createCanvas(480, 640, WEBGL);
+  canvas.id('canvastarget');
+  canvas.position(540,120);
+  
+    
+    
+  video = createVideo('corps.mp4');
+  video.autoplay(); 
+  video.loop();
+  video.size(480, 640);
+  video.position(540,120);
+  video.hide();
+  video.id('rearwindow');
+  
+  var seriously = new Seriously();
+
+  var src = seriously.source('#rearwindow');
+  var target = seriously.target('#canvastarget');
+    
+    
+  chroma = seriously.effect('chroma');
+  
+  
+  chroma.source = src;
+  target.source = chroma;
+  var r = 42 / 255;
+  var g = 120/ 255;
+  var b = 40 / 255;
+  chroma.screen = [r,g,b,1];
+  chroma.balance = 70/100 ;
+  
+  
+    
+   
+  seriously.go();
+
+
+
+}
+    
+ 
+
+
+function draw(){
+    
+    
+    chroma.clipBlack = micLevel;
+    
+    micLevel = mic.getLevel();
+    micLevel = Math.round(micLevel*100)/100;
+    
+    console.log(micLevel);
+    
+  
+    
+}
+
+
+
+
+//╔╦╗╔═╗╔═╗╔╦╗  ╦  ╦╦╔╦╗╔═╗╔═╗  ╔═╗╔╦╗  ╔═╗╔═╗╦═╗╦╔═╗╦ ╦╔═╗╦ ╦ ╦ ╦╔═╗
+// ║ ║╣ ╚═╗ ║   ╚╗╔╝║ ║║║╣ ║ ║  ║╣  ║   ╚═╗║╣ ╠╦╝║║ ║║ ║╚═╗║ ╚╦╝ ║╚═╗
+// ╩ ╚═╝╚═╝ ╩    ╚╝ ╩═╩╝╚═╝╚═╝  ╚═╝ ╩   ╚═╝╚═╝╩╚═╩╚═╝╚═╝╚═╝╩═╝╩o╚╝╚═╝
+
+
+
+
+
+
+  //mytext = createP('clipblack');
+  //slider = createSlider(0, 1, 0, 0.01);
+ //slider.id('black-slider');
+ // chroma.clipBlack = test;
+    
+  /*  
+    
+  mytext = createP('clipwhite');    
+   
+  slider = createSlider(0, 1, 1, 0.01);
+  slider.id('white-slider');
+  chroma.clipWhite = '#white-slider';  
+    
+    
+    
+  mytext = createP('balance'); 
+    
+  slider = createSlider(0, 1, 1, 0.01);
+  slider.id('balance-slider');
+  chroma.balance = '#balance-slider';
+    
+    
+    
+  mytext = createP('weight'); 
+    
+  slider = createSlider(0, 1, 1, 0.01);
+  slider.id('weight-slider');
+  chroma.weight = '#weight-slider';   
+    
+*/
+    
+
+    
+    
+ //chroma.clipBlack = black;
+    //console.log("chroma : "+chroma.clipBlack);
+  
+ 
+   //blackslider.value(micLevel);    
+
+   //slider.id('black-slider').value(micLevel);
 
 
 
@@ -78,7 +207,7 @@ Classify the recorded signal using the following criterion:
  
 
 
-var mic,fft;
+/*var mic,fft;
 
 function setup() {
 createCanvas(1024,400);
@@ -98,7 +227,7 @@ function draw() {
 
    beginShape();
    for (i = 0; i<spectrum.length; i++) {
-    vertex(i, map(spectrum[i], 0, 1024, height, 0) );
+    vertex(i, map(spectrum[i], 0, 255, height, 0) );
    }
    endShape();
 
@@ -107,7 +236,7 @@ console.log(spectrum);
 
 }
 
-
+*/
 
 
 
@@ -134,8 +263,8 @@ function draw(){
     
   console.log(micLevel);
 }
-*/
 
+*/
 
 
 
@@ -143,8 +272,16 @@ function draw(){
 //│  │ │ ││├┤   ╠═╣║║║╠═╝  ║╣  ║   ╚╗╔╝║ ║║║╣ ║ ║
 //└─┘└─┘─┴┘└─┘  ╩ ╩╩ ╩╩    ╚═╝ ╩    ╚╝ ╩═╩╝╚═╝╚═╝
 
-
-
+/*
+if (micLevel > 0.3){
+    //console.log('condition1');
+    black = 100/100;
+    }
+else if (micLevel > 0.004 && micLevel < 0.3){
+    //console.log('condition2');
+    black = 50/100;
+    }  
+ */   
 
 /*
 
@@ -164,13 +301,6 @@ Else(amp < 0,004){
     
 
 */
-
-
-
-
-
-
-
 
 
 
@@ -306,3 +436,4 @@ volhistory.push(vol);
 
 
 
+//<img src='fenetre.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
