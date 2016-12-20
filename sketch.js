@@ -34,17 +34,19 @@ Le boitier permettrait aussi de cacher le capteur à l'entrée de la meurtrière
 ca pourrait peuetre etre placer dans une salle obscure, ainsi la lumière s'evadant de la meurtriere attirerait le regard de l'observateur.
 Elle inviterait a un rapport intime avec le dispositif.
 
-resume: Je filme un fragment de corps en studio devant la fenêtre avec vue, sur lequel j'applique des autocollants vert comme sont 
-utilisés les green screen au cinéma. Á la différence des effets spéciaux, je place le fond vert sur le corps et non derrière.
-Ceci me permettra d'incruster sur les parties vertes du corps en postproduction l'image de la vue de la fenêtre devant lequel 
-ce corps se trouve. Dans un deuxième temps,  l'étendue ou la rétractation  des trous sur le corps varie en fonction de la respiration
-du spectateur grâce à un  dispositif interactif de microphones qui agit en fonction du souffle et l'intensité des membres du public.
-Cependant, le dispositif ne fonctionnera qui si le spectateur se positionne à proximité de la meurtrière dans laquelle la vidéo sera 
-projeté. Mon idée ici consiste à faire du corps une fenêtre, et d'inclure le corps du spectateur lui-même dans cette réflexion.
-Dès lors apparait une nouvelle posture dans mon travail, qui est connexe à la réflexion, c’est-à-dire la figure de la fenêtre. 
-Celle-ci c’étant présenté dans mon travail à plusieurs reprises, sans pour autant s’affirmer au premier plan. Cette figure de la fenêtre,
-existant dans l’histoire de l’art dans la pratique de la peinture depuis la renaissance, serait une posture à développer, alors que mon 
-dispositif se positionne lui-même sus forme de fenêtre, mais aussi qui ouvre une fenêtre sur le corps. 
+Je filme un fragment de corps en studio devant la fenêtre avec vue, sur lequel j'applique des autocollants verts comme sont utilisés les
+green screen . À la différence des effets spéciaux, je place le fond vert sur le corps .Ceci me permettra d'incruster sur les parties
+vertes du corps en postproduction l'image de la vue de la fenêtre devant lequel ce corps se trouve. Pour ce faire, j'utilise l'effet
+chroma de la librairie d'effets vidéos live "seriously.js". Dans un deuxième temps, l'étendue ou la rétractation des trous sur le corps
+varie en fonction de la respiration du spectateur grâce à un microphone qui agit en fonction du souffle et l'intensité .Le dispositif ne
+fonctionnera que si le spectateur se positionne à proximité de la meurtrière dans laquelle la vidéo sera diffusée. ( la vidéo est
+diffusée sur un écran, celui relié a un tunnel qui mène a la meurtrière dans le mur, isolant ainsi la vidée dans une petite fenêtre,
+et permettant à un seul spectateur à la fois de visionner et interagir avec a vidéo). Mon idée ici consiste à faire du corps une fenêtre,
+et d'inclure le corps du spectateur lui-même dans cette réflexion. Alors que mon dispositif se positionne lui-même sous forme de fenêtre, 
+mais aussi qui ouvre une fenêtre sur le corps, le spectateur est mis dans la position de voyeur. La disposition de la vidéo le met en
+position de vulnérabilité dans son espace. Ainsi, le spectateur, adopte tranquillement le rythme de la respiration de la vidéo,
+alors que celle-ci réagi à la vidéo du même spectateur. En toute discrétion, la vidéo renvoie la position du spectateur voyeur au
+spectateur,, et entreprend une sorte de boucle.
 
 
 ╔╦╗╦ ╦╔═╗╔═╗╦═╗╦╔═╗
