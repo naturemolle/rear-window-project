@@ -5,7 +5,7 @@
  ╚╝ ╩ ╩╩═╝╚═╝╚═╝╩╚═╚═╝
 
 
-capter valeur fft 'ou amplitude si possible'respiration: microphone, connecter sur wemos.
+capter valeur amplitude si possible'respiration: microphone.
 
 
 avec l'amplitude, la valeur de l'expiration est frole le 0,4
